@@ -1,0 +1,44 @@
+{
+  "name": "coppers-buhgalteria",
+  "version": "1.0.0",
+  "description": "CopperS Бугалт — учёт продаж и склада, десктоп-версия",
+  "main": "main.js",
+  "author": "coppers",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux",
+    "build:all": "electron-builder -mwl"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "ru.coppers.buhgalteria",
+    "productName": "CopperS Бугалт",
+    "icon": "build/icon.png",
+    "files": [
+      "index.html",
+      "main.js",
+      "preload.js"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "signAndEditExecutable": false
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Office"
+    }
+  }
+}
